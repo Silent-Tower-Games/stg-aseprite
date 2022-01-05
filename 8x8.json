@@ -321,6 +321,7 @@
    { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
   ],
   "slices": [
+   { "name": "Slice 1", "color": "#0000ffff", "data": "kljasdf", "keys": [{ "frame": 0, "bounds": {"x": 1, "y": 1, "w": 6, "h": 6 }, "center": {"x": 1, "y": 1, "w": 4, "h": 4 }, "pivot": {"x": 0, "y": 0 } }, { "frame": 1, "bounds": {"x": 1, "y": 1, "w": 6, "h": 6 }, "center": {"x": 1, "y": 1, "w": 4, "h": 4 }, "pivot": {"x": 0, "y": 0 } }] }
   ]
  }
 }
