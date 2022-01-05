@@ -6,7 +6,7 @@
             "command": "make",
             "args": [
                 "CFLAGS=\"-g -pedantic\"",
-                "INCLUDE_PATHS=\"-I/json-c/include\"",
+                "INCLUDE_PATHS=\"-I/json-c\"",
                 "LIBRARY_PATHS=\"-L/json-c\""
             ],
             "group": {
