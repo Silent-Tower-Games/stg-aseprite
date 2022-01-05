@@ -6,6 +6,5 @@
 *.so.0
 *.a
 *.dll
-FNA3D_Vulkan_PipelineCache.blob
 main
 valgrind.txt
