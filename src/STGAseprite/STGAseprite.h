@@ -112,28 +112,105 @@ typedef struct STGAseprite
     STGAseprite_Meta meta;
 } STGAseprite;
 
+/**
+ * @brief Load ASEprite JSON metadata from file & create an ASEprite metadata object from it.
+ * 
+ * @param json pointer to a JSON object pointer
+ * @param filename path to the ASEprite JSON metadata file
+ * @return STGAseprite ASEprite metadata object
+ */
 STGAseprite STGAseprite_LoadFromFile(json_object** json, const char* filename);
 
+/**
+ * @brief Create an ASEprite metadata object from a JSON object.
+ * 
+ * @param json JSON object pointer that has the ASEprite JSON metadata
+ * @return STGAseprite ASEprite metadata object
+ */
 STGAseprite STGAseprite_CreateFromJSON(struct json_object* json);
 
+/**
+ * @brief Create an ASEprite Frame metadata object from a JSON object.
+ * 
+ * @param json JSON object pointer that has the ASEprite Frame metadata JSON
+ * @return STGAseprite_Frame ASEprite Frame metadata object
+ */
 STGAseprite_Frame STGAseprite_Frame_CreateFromJSON(struct json_object* json);
 
+/**
+ * @brief Create an ASEprite Meta metadata object from a JSON object.
+ * 
+ * @param json JSON object pointer that has the ASEprite Meta metadata JSON
+ * @return STGAseprite_Meta ASEprite Meta metadata object
+ */
 STGAseprite_Meta STGAseprite_Meta_CreateFromJSON(struct json_object* json);
 
+/**
+ * @brief Create an ASEprite Rect metadata object from a JSON object.
+ * 
+ * @param json JSON object pointer that has the ASEprite Rect metadata JSON
+ * @return STGAseprite_Meta ASEprite Rect metadata object
+ */
 STGAseprite_Rect STGAseprite_Rect_CreateFromJSON(struct json_object* json);
 
+/**
+ * @brief Create an ASEprite Position metadata object from a JSON object.
+ * 
+ * @param json JSON object pointer that has the ASEprite Position metadata JSON
+ * @return STGAseprite_Meta ASEprite Position metadata object
+ */
 STGAseprite_Position STGAseprite_Position_CreateFromJSON(struct json_object* json);
 
+/**
+ * @brief Create an ASEprite Size metadata object from a JSON object.
+ * 
+ * @param json JSON object pointer that has the ASEprite Size metadata JSON
+ * @return STGAseprite_Meta ASEprite Size metadata object
+ */
 STGAseprite_Size STGAseprite_Size_CreateFromJSON(struct json_object* json);
 
+/**
+ * @brief Create an ASEprite FrameTag metadata object from a JSON object.
+ * 
+ * @param json JSON object pointer that has the ASEprite FrameTag metadata JSON
+ * @return STGAseprite_Meta ASEprite FrameTag metadata object
+ */
 STGAseprite_FrameTag STGAseprite_FrameTag_CreateFromJSON(struct json_object* json);
 
+/**
+ * @brief Create an ASEprite Layer metadata object from a JSON object.
+ * 
+ * @param json JSON object pointer that has the ASEprite Layer metadata JSON
+ * @return STGAseprite_Meta ASEprite Layer metadata object
+ */
 STGAseprite_Layer STGAseprite_Layer_CreateFromJSON(struct json_object* json);
 
+/**
+ * @brief Create an ASEprite Key metadata object from a JSON object.
+ * 
+ * @param json JSON object pointer that has the ASEprite Key metadata JSON
+ * @return STGAseprite_Meta ASEprite Key metadata object
+ */
 STGAseprite_Slice_Key STGAseprite_Slice_Key_CreateFromJSON(struct json_object* json);
 
+/**
+ * @brief Create an ASEprite Slice metadata object from a JSON object.
+ * 
+ * @param json JSON object pointer that has the ASEprite Slice metadata JSON
+ * @return STGAseprite_Meta ASEprite Slice metadata object
+ */
 STGAseprite_Slice STGAseprite_Slice_CreateFromJSON(struct json_object* json);
 
+/**
+ * @brief Free all memory allocated for the ASEprite metadata object.
+ * 
+ * @param aseprite pointer to ASEprite metadata object
+ */
 void STGAseprite_Destroy(STGAseprite* aseprite);
 
+/**
+ * @brief Free all memory allocated for the ASEprite Meta metadata object.
+ * 
+ * @param meta pointer to ASEprite Meta metadata object
+ */
 void STGAseprite_Meta_Destroy(STGAseprite_Meta* meta);
