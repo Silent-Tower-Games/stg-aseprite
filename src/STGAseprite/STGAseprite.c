@@ -4,6 +4,10 @@
 
 STGAseprite STGAseprite_LoadFromFile(json_object** json, const char* filename)
 {
+    assert(json != NULL);
+    assert(*json != NULL);
+    assert(filename != NULL);
+    
     char* rawJson;
     
     FILE* f = fopen(filename, "r");
@@ -26,6 +30,8 @@ STGAseprite STGAseprite_LoadFromFile(json_object** json, const char* filename)
 
 STGAseprite STGAseprite_CreateFromJSON(struct json_object* json)
 {
+    assert(json != NULL);
+    
     STGAseprite parent;
     struct json_object* prop;
     
@@ -38,6 +44,8 @@ STGAseprite STGAseprite_CreateFromJSON(struct json_object* json)
 
 STGAseprite_Frame STGAseprite_Frame_CreateFromJSON(struct json_object* json)
 {
+    assert(json != NULL);
+    
     STGAseprite_Frame parent;
     struct json_object* prop;
     
@@ -54,6 +62,8 @@ STGAseprite_Frame STGAseprite_Frame_CreateFromJSON(struct json_object* json)
 
 STGAseprite_Meta STGAseprite_Meta_CreateFromJSON(struct json_object* json)
 {
+    assert(json != NULL);
+    
     STGAseprite_Meta parent;
     struct json_object* prop;
     
@@ -73,6 +83,8 @@ STGAseprite_Meta STGAseprite_Meta_CreateFromJSON(struct json_object* json)
 
 STGAseprite_Rect STGAseprite_Rect_CreateFromJSON(struct json_object* json)
 {
+    assert(json != NULL);
+    
     STGAseprite_Rect parent;
     struct json_object* prop;
     
@@ -86,6 +98,8 @@ STGAseprite_Rect STGAseprite_Rect_CreateFromJSON(struct json_object* json)
 
 STGAseprite_Size STGAseprite_Size_CreateFromJSON(struct json_object* json)
 {
+    assert(json != NULL);
+    
     STGAseprite_Size parent;
     struct json_object* prop;
     
@@ -97,6 +111,8 @@ STGAseprite_Size STGAseprite_Size_CreateFromJSON(struct json_object* json)
 
 STGAseprite_Position STGAseprite_Position_CreateFromJSON(struct json_object* json)
 {
+    assert(json != NULL);
+    
     STGAseprite_Position parent;
     struct json_object* prop;
     
@@ -108,6 +124,8 @@ STGAseprite_Position STGAseprite_Position_CreateFromJSON(struct json_object* jso
 
 STGAseprite_FrameTag STGAseprite_FrameTag_CreateFromJSON(struct json_object* json)
 {
+    assert(json != NULL);
+    
     STGAseprite_FrameTag parent;
     struct json_object* prop;
     
@@ -121,6 +139,8 @@ STGAseprite_FrameTag STGAseprite_FrameTag_CreateFromJSON(struct json_object* jso
 
 STGAseprite_Layer STGAseprite_Layer_CreateFromJSON(struct json_object* json)
 {
+    assert(json != NULL);
+    
     STGAseprite_Layer parent;
     struct json_object* prop;
     
@@ -133,6 +153,8 @@ STGAseprite_Layer STGAseprite_Layer_CreateFromJSON(struct json_object* json)
 
 STGAseprite_Slice_Key STGAseprite_Slice_Key_CreateFromJSON(struct json_object* json)
 {
+    assert(json != NULL);
+    
     STGAseprite_Slice_Key parent;
     struct json_object* prop;
     
@@ -146,6 +168,8 @@ STGAseprite_Slice_Key STGAseprite_Slice_Key_CreateFromJSON(struct json_object* j
 
 STGAseprite_Slice STGAseprite_Slice_CreateFromJSON(struct json_object* json)
 {
+    assert(json != NULL);
+    
     STGAseprite_Slice parent;
     struct json_object* prop;
     
@@ -159,12 +183,16 @@ STGAseprite_Slice STGAseprite_Slice_CreateFromJSON(struct json_object* json)
 
 void STGAseprite_Destroy(STGAseprite* aseprite)
 {
+    assert(aseprite != NULL);
+    
     free(aseprite->frames);
     STGAseprite_Meta_Destroy(&aseprite->meta);
 }
 
 void STGAseprite_Meta_Destroy(STGAseprite_Meta* meta)
 {
+    assert(meta != NULL);
+    
     // frameTags, layers, slices
     free(meta->frameTags);
     free(meta->layers);
