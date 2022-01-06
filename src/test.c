@@ -4,12 +4,13 @@
 #include <json.h>
 #include "STGAseprite/STGAseprite.h"
 
+// TODO: NULL safety
+// TODO: Commenting
+
 #define assertStr(var, str) assert(strcmp(aseprite.var, str) == 0);
 
 int main()
 {
-    printf("Hello, World!\n");
-    
     struct json_object* parsedJSON;
     
     STGAseprite aseprite = STGAseprite_LoadFromFile(&parsedJSON, "8x8.json");

@@ -15,6 +15,7 @@ STGAseprite STGAseprite_LoadFromFile(json_object** json, const char* filename)
     rawJson = malloc(sizeof(char) * (length + 1));
     fread(rawJson, 1, length, f);
     fclose(f);
+    rawJson[length] = '\0';
     
     *json = json_tokener_parse(rawJson);
     
