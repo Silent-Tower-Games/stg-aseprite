@@ -1,0 +1,16 @@
+{ "frames": [
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.30-x64",
+  "image": "8x8.png",
+  "format": "RGBA8888",
+  "size": { "w": 64, "h": 40 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+  ],
+  "slices": []
+ }
+}

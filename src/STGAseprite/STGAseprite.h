@@ -11,11 +11,18 @@
     json_object_object_get_ex(json, #src, &prop); \
     size_t length = json_object_array_length(prop); \
     parent.src ## Length = length; \
-    parent.src = malloc(sizeof(type) * length); \
-    for(int i = 0; i < length; i++) \
+    if(length) \
     { \
-        struct json_object* index = json_object_array_get_idx(prop, i); \
-        parent.src[i] = func(index); \
+        parent.src = malloc(sizeof(type) * length); \
+        for(int i = 0; i < length; i++) \
+        { \
+            struct json_object* index = json_object_array_get_idx(prop, i); \
+            parent.src[i] = func(index); \
+        } \
+    } \
+    else \
+    { \
+        parent.src = NULL;\
     } \
 }
 
