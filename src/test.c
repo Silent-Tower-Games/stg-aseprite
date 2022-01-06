@@ -69,8 +69,32 @@ int main()
     assert(aseprite.frames[0].frame.y == 0);
     assert(aseprite.frames[0].frame.w == 8);
     assert(aseprite.frames[0].frame.h == 8);
+    assert(aseprite.frames[0].rotated == 0);
+    assert(aseprite.frames[0].trimmed == 0);
+    assert(aseprite.frames[0].spriteSourceSize.x == 0);
+    assert(aseprite.frames[0].spriteSourceSize.y == 0);
+    assert(aseprite.frames[0].spriteSourceSize.w == 8);
+    assert(aseprite.frames[0].spriteSourceSize.h == 8);
+    assert(aseprite.frames[0].sourceSize.w == 8);
+    assert(aseprite.frames[0].sourceSize.h == 8);
+    assert(aseprite.frames[0].duration == 500);
     
-    // TODO: Free ASEprite
+    assertStr(frames[1].filename, "8x8 1.aseprite");
+    assert(aseprite.frames[1].frame.x == 8);
+    assert(aseprite.frames[1].frame.y == 0);
+    assert(aseprite.frames[1].frame.w == 8);
+    assert(aseprite.frames[1].frame.h == 8);
+    assert(aseprite.frames[1].rotated == 0);
+    assert(aseprite.frames[1].trimmed == 0);
+    assert(aseprite.frames[1].spriteSourceSize.x == 0);
+    assert(aseprite.frames[1].spriteSourceSize.y == 0);
+    assert(aseprite.frames[1].spriteSourceSize.w == 8);
+    assert(aseprite.frames[1].spriteSourceSize.h == 8);
+    assert(aseprite.frames[1].sourceSize.w == 8);
+    assert(aseprite.frames[1].sourceSize.h == 8);
+    assert(aseprite.frames[1].duration == 500);
+    
+    STGAseprite_Destroy(&aseprite);
     
     json_object_put(parsedJSON);
     

@@ -155,3 +155,22 @@ STGAseprite_Slice STGAseprite_Slice_CreateFromJSON(struct json_object* json)
     
     return parent;
 }
+
+void STGAseprite_Destroy(STGAseprite* aseprite)
+{
+    free(aseprite->frames);
+    STGAseprite_Meta_Destroy(&aseprite->meta);
+}
+
+void STGAseprite_Meta_Destroy(STGAseprite_Meta* meta)
+{
+    // frameTags, layers, slices
+    free(meta->frameTags);
+    free(meta->layers);
+    
+    for(int i = 0; i < meta->slicesLength; i++)
+    {
+        free(meta->slices[i].keys);
+    }
+    free(meta->slices);
+}

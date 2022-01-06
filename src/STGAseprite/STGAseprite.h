@@ -10,12 +10,13 @@
 #define STGASEPRITE_FOREACH(src, func, type) {\
     json_object_object_get_ex(json, #src, &prop); \
     size_t length = json_object_array_length(prop); \
+    parent.src ## Length = length; \
     parent.src = malloc(sizeof(type) * length); \
     for(int i = 0; i < length; i++) \
     { \
         struct json_object* index = json_object_array_get_idx(prop, i); \
         parent.src[i] = func(index); \
-    }\
+    } \
 }
 
 typedef struct STGAseprite_Rect
@@ -67,6 +68,7 @@ typedef struct STGAseprite_Slice
     const char* color;
     const char* data;
     STGAseprite_Slice_Key* keys;
+    int keysLength;
 } STGAseprite_Slice;
 
 typedef struct STGAseprite_Frame
@@ -89,13 +91,17 @@ typedef struct STGAseprite_Meta
     STGAseprite_Size size;
     const char* scale;
     STGAseprite_FrameTag* frameTags;
+    int frameTagsLength;
     STGAseprite_Layer* layers;
+    int layersLength;
     STGAseprite_Slice* slices;
+    int slicesLength;
 } STGAseprite_Meta;
 
 typedef struct STGAseprite
 {
     STGAseprite_Frame* frames;
+    int framesLength;
     STGAseprite_Meta meta;
 } STGAseprite;
 
@@ -120,3 +126,7 @@ STGAseprite_Layer STGAseprite_Layer_CreateFromJSON(struct json_object* json);
 STGAseprite_Slice_Key STGAseprite_Slice_Key_CreateFromJSON(struct json_object* json);
 
 STGAseprite_Slice STGAseprite_Slice_CreateFromJSON(struct json_object* json);
+
+void STGAseprite_Destroy(STGAseprite* aseprite);
+
+void STGAseprite_Meta_Destroy(STGAseprite_Meta* meta);
