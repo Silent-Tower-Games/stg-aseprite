@@ -5,7 +5,6 @@
 STGAseprite STGAseprite_LoadFromFile(json_object** json, const char* filename)
 {
     assert(json != NULL);
-    assert(*json != NULL);
     assert(filename != NULL);
     
     char* rawJson;

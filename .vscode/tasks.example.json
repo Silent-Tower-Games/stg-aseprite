@@ -2,13 +2,35 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "Make",
+            "label": "Make Linux",
             "command": "make",
-            "args": [
-                "CFLAGS=\"-g -pedantic\"",
-                "INCLUDE_PATHS=\"-I/json-c\"",
-                "LIBRARY_PATHS=\"-L/json-c\""
-            ],
+            "options": {
+                "env": {
+                    "CC": "gcc",
+                    "CFLAGS": "-g -pedantic",
+                    "INCS": "-I/json-c-master",
+                    "LIBS": "-L/json-c-master -ljson-c",
+                    "EXT": "so"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Make Windows",
+            "command": "make",
+            "options": {
+                "env": {
+                    "CC": "gcc",
+                    "CFLAGS": "-g -pedantic",
+                    "INCS": "-IC:\\Software\\json-c-master",
+                    "LIBS": "-LC:\\Software\\stg-aseprite-master -LC:\\Software\\json-c-master -ljson-c -lstgaseprite",
+                    "EXT": "dll"
+                }
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
