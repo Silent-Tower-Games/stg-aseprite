@@ -4,15 +4,6 @@
             "type": "shell",
             "label": "Make Linux",
             "command": "make",
-            "options": {
-                "env": {
-                    "CC": "gcc",
-                    "CFLAGS": "-g -pedantic",
-                    "INCS": "-I/json-c-master",
-                    "LIBS": "-L/json-c-master -ljson-c",
-                    "EXT": "so"
-                }
-            },
             "group": {
                 "kind": "build",
                 "isDefault": true
