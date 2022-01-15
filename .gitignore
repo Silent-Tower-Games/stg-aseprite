@@ -7,6 +7,10 @@
 *.so.0
 *.a
 *.dll
-main
-main.exe
+*.cmake
+CMakeFiles
+CMakeCache.txt
+Makefile
+STGAsepriteTest
+STGAsepriteTest.exe
 valgrind.txt

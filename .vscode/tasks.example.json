@@ -4,6 +4,12 @@
             "type": "shell",
             "label": "Make Linux",
             "command": "make",
+            "options": {
+                "env": {
+                    "JSONC_INCLUDE": "/home/swan/Programming/Libraries/Debug/json-c/",
+                    "JSONC_LIB": "/home/swan/Programming/Libraries/Debug/json-c/"
+                }
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true

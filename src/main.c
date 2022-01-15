@@ -8,7 +8,7 @@
 
 int main()
 {
-    printf("Hello, World!\n");
+    printf("Hello, World! Cmake\n");
     
     struct json_object* parsedJSON = NULL;
     
